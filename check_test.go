@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"gitlab.com/utt_meelis/check"
+	"github.com/moledoc/check"
 )
 
 func TestCheck(t *testing.T) {

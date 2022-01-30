@@ -1,3 +1,3 @@
-module gitlab.com/utt_meelis/check
+module github.com/moledoc/check
 
 go 1.16
