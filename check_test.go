@@ -10,6 +10,8 @@ import (
 	"github.com/moledoc/check"
 )
 
+// TODO: make tests for Assert(s)
+
 func TestCheck(t *testing.T) {
 	file, err := os.Open("test_scanner.csv")
 	defer file.Close()
