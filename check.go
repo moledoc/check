@@ -10,7 +10,7 @@ import (
 // TODO: Comment and improve the assert method and related types
 
 type Tint int
-type Tfloat float64
+type Tfloat64 float64
 type Tstring string
 
 func (result Tint) Assert(expected Tint) {
