@@ -51,3 +51,33 @@ func TestAssertS(t *testing.T) {
 	}()
 	check.Tstring("1").Assert("2")
 }
+
+func TestAssertIL(t *testing.T) {
+	defer func() {
+		expected := "Expected [1 2 4], got [1 2 3]\n"
+		if err := recover(); err != nil && err != expected {
+			t.Fatalf("Expected '%v', got '%v'\n", expected, err)
+		}
+	}()
+	check.TintL([]int{1, 2, 3}).Assert([]int{1, 2, 4})
+}
+
+func TestAssertFL(t *testing.T) {
+	defer func() {
+		expected := "Expected [1 2 4], got [1 2 3]\n"
+		if err := recover(); err != nil && err != expected {
+			t.Fatalf("Expected '%v', got '%v'\n", expected, err)
+		}
+	}()
+	check.Tfloat64L([]float64{1, 2, 3}).Assert([]float64{1, 2, 4})
+}
+
+func TestAssertSL(t *testing.T) {
+	defer func() {
+		expected := "Expected [1 2 4], got [1 2 3]\n"
+		if err := recover(); err != nil && err != expected {
+			t.Fatalf("Expected '%v', got '%v'\n", expected, err)
+		}
+	}()
+	check.TstringL([]string{"1", "2", "3"}).Assert([]string{"1", "2", "4"})
+}
